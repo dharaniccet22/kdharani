@@ -72,14 +72,14 @@ const observerOptions = {
 const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+            entry.target.style.animation = 'slideInFromRight 0.8s ease-out forwards';
             observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observe all cards and items
-document.querySelectorAll('.project-card, .skill-card, .experience-item, .achievement-item').forEach(element => {
+// Observe all sections
+document.querySelectorAll('section').forEach(element => {
     element.style.opacity = '0';
     observer.observe(element);
 });
